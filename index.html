@@ -1,13 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08070D">
+
 <title>ROB | Digital Contact Card</title>
 <meta name="description" content="Connect with ROB through Facebook and GCash.">
 
-<style> * { box-sizing: border-box;
+<style>
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +22,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse at top, #24133e 0%, #100b19 38%, #08070d 75%);
+  background: radial-gradient(
+    ellipse at top,
+    #24133e 0%,
+    #100b19 38%,
+    #08070d 75%
+  );
   color: #fff;
   font-family: Arial, sans-serif;
 }
@@ -26,18 +35,26 @@ body {
 .card {
   width: 100%;
   max-width: 420px;
+  margin: auto;
   padding: 30px 23px;
   background: rgba(18, 15, 27, .96);
   border: 1px solid #49316b;
   border-radius: 25px;
-  box-shadow: 0 25px 75px rgba(0,0,0,.65), 0 0 30px rgba(139,92,246,.10);
+  box-shadow: 0 25px 75px rgba(0,0,0,.65),
+              0 0 30px rgba(139,92,246,.10);
   text-align: center;
   animation: appear .7s ease;
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .brand {
@@ -80,16 +97,27 @@ h1 {
 
 .divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #68469a, transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    #68469a,
+    transparent
+  );
   margin: 20px 0;
 }
 
 .section {
+  display: block;
+  width: 100%;
   padding: 19px;
   margin-bottom: 17px;
   border: 1px solid #38264e;
   border-radius: 17px;
-  background: linear-gradient(145deg,#1d1729,#14111d);
+  background: linear-gradient(
+    145deg,
+    #1d1729,
+    #14111d
+  );
 }
 
 .section-title {
@@ -101,6 +129,7 @@ h1 {
 
 .social-link {
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 13px;
   padding: 13px 0;
@@ -170,14 +199,17 @@ h1 {
 
 .number {
   display: block;
+  width: 100%;
   color: #fff;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 1px;
   margin: 17px 0;
+  white-space: nowrap;
 }
 
 button {
+  display: block;
   width: 100%;
   padding: 14px;
   border-radius: 11px;
@@ -199,16 +231,34 @@ button:hover {
 .save-button {
   margin-top: 2px;
   padding: 16px;
-  background: linear-gradient(120deg,#7C3AED,#5124A0);
+  background: linear-gradient(
+    120deg,
+    #7C3AED,
+    #5124A0
+  );
   border: 1px solid #A78BFA;
   box-shadow: 0 5px 22px #8B5CF633;
 }
 
 footer {
+  display: block;
+  width: 100%;
   margin-top: 25px;
   color: #777080;
   font-size: 9px;
   letter-spacing: 3px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+    align-items: flex-start;
+  }
+
+  .card {
+    padding: 25px 18px;
+  }
 }
 </style>
 </head>
@@ -225,14 +275,19 @@ footer {
   </div>
 
   <h1>ROB</h1>
-  <div class="subtitle">DIGITAL CONTACT CARD</div>
+
+  <div class="subtitle">
+    DIGITAL CONTACT CARD
+  </div>
 
   <div class="divider"></div>
 
   <!-- SOCIAL MEDIA -->
   <section class="section">
 
-    <div class="section-title">CONNECT WITH ME</div>
+    <div class="section-title">
+      CONNECT WITH ME
+    </div>
 
     <!-- FACEBOOK -->
     <a class="social-link"
@@ -254,15 +309,16 @@ footer {
 
       <span class="arrow">↗</span>
 
-	</a>
- 
+    </a>
 
   </section>
 
   <!-- GCASH PAYMENT -->
   <section class="section">
 
-    <div class="section-title">GCASH PAYMENT</div>
+    <div class="section-title">
+      GCASH PAYMENT
+    </div>
 
     <p class="payment-description">
       Scan my QR code to send payment
@@ -274,7 +330,9 @@ footer {
       alt="ROB GCash QR Code"
     >
 
-    <span class="number">0948 617 0425</span>
+    <span class="number">
+      0948 617 0425
+    </span>
 
     <button type="button" onclick="copyNumber()">
       COPY GCASH NUMBER
@@ -287,7 +345,9 @@ footer {
     type="button"
     class="save-button"
     onclick="saveContact()">
+
     ♡ &nbsp; SAVE MY CONTACT
+
   </button>
 
   <footer>
@@ -297,19 +357,26 @@ footer {
 </main>
 
 <script>
+
 function copyNumber() {
+
   const number = "09486170425";
 
   if (navigator.clipboard && window.isSecureContext) {
+
     navigator.clipboard.writeText(number)
       .then(() => alert("GCash number copied!"))
       .catch(() => alert("Please copy: " + number));
+
   } else {
+
     alert("Please copy this number: " + number);
+
   }
 }
 
 function saveContact() {
+
   const vcard = [
     "BEGIN:VCARD",
     "VERSION:3.0",
@@ -334,7 +401,9 @@ function saveContact() {
   link.remove();
 
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+
 }
+
 </script>
 
 </body>
