@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08070D">
-
 <title>ROB | Digital Contact Card</title>
-
 <meta name="description" content="Connect with ROB through Facebook and GCash.">
 
 <style> * { box-sizing: border-box;
@@ -20,8 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background:
-    radial-gradient(ellipse at top, #24133e 0%, #100b19 38%, #08070d 75%);
+  background: radial-gradient(ellipse at top, #24133e 0%, #100b19 38%, #08070d 75%);
   color: #fff;
   font-family: Arial, sans-serif;
 }
@@ -33,21 +30,14 @@ body {
   background: rgba(18, 15, 27, .96);
   border: 1px solid #49316b;
   border-radius: 25px;
-  box-shadow: 0 25px 75px rgba(0,0,0,.65),
-              0 0 30px rgba(139,92,246,.10);
+  box-shadow: 0 25px 75px rgba(0,0,0,.65), 0 0 30px rgba(139,92,246,.10);
   text-align: center;
   animation: appear .7s ease;
 }
 
 @keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .brand {
@@ -90,12 +80,7 @@ h1 {
 
 .divider {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #68469a,
-    transparent
-  );
+  background: linear-gradient(to right, transparent, #68469a, transparent);
   margin: 20px 0;
 }
 
@@ -134,17 +119,17 @@ h1 {
   height: 43px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   border-radius: 12px;
   background: #33204e;
-  color: #C4B5FD;
-  font-size: 21px;
-  font-weight: bold;
 }
-  
+
 .social-icon svg {
   width: 27px;
   height: 27px;
   display: block;
+}
+
 .social-info {
   flex: 1;
 }
@@ -236,13 +221,10 @@ footer {
 
   <!-- PROFILE PHOTO -->
   <div class="avatar">
-    <img
-      src="rob-profile.png"
-      alt="ROB Profile Photo"
-    >
+    <img src="rob-profile.png" alt="ROB Profile Photo">
   </div>
 
-  <h1>ROB</h1>
+  <h1>CHRIS</h1>
   <div class="subtitle">DIGITAL CONTACT CARD</div>
 
   <div class="divider"></div>
@@ -252,13 +234,14 @@ footer {
 
     <div class="section-title">CONNECT WITH ME</div>
 
+    <!-- FACEBOOK -->
     <a class="social-link"
        href="https://www.facebook.com/jun.robeniel/"
        target="_blank"
        rel="noopener noreferrer">
 
-      <span class="social-icon">f</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <span class="social-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path fill="#1877F2"
             d="M24 12a12 12 0 1 0-13.875 11.85v-8.39H7.08V12h3.045V9.36c0-3.005 1.79-4.665 4.527-4.665 1.31 0 2.68.234 2.68.234v2.95h-1.51c-1.49 0-1.955.925-1.955 1.874V12h3.33l-.532 3.46h-2.798v8.39A12.003 12.003 0 0 0 24 12z"/>
         </svg>
@@ -270,7 +253,7 @@ footer {
       </span>
 
       <span class="arrow">↗</span>
-    </a>
+ 
 
   </section>
 
@@ -328,7 +311,7 @@ function saveContact() {
   const vcard = [
     "BEGIN:VCARD",
     "VERSION:3.0",
-    "FN:CHRIS",
+    "FN:ROB",
     "TEL;TYPE=CELL:09486170425",
     "URL:https://www.facebook.com/jun.robeniel/",
     "END:VCARD"
@@ -348,7 +331,7 @@ function saveContact() {
   link.click();
   link.remove();
 
-  URL.revokeObjectURL(url);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 </script>
 
